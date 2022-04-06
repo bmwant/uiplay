@@ -2,12 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./scr/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./src/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Loading screen</title>
+    <!-- <link rel="stylesheet" href="./src/style.css" /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div id="app"></div>
-    <!-- <script type="module" src="/main.js"></script> -->
+  <body class="container mx-auto h-screen flex items-center justify-center">
+    <div class="max-w-md mx-auto h-auto bg-rose-100 rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+      <div class="flex flex-row">
+        <div class="basis-1/4 p-8">
+          <div class="flex justify-center items-center mx-auto">
+            <svg class="animate-spin h-24 w-24 text-rose-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="uppercase tracking-wide text-sm text-gray-800 font-semibold">Please wait</div>
+          <a href="#" class="block mt-1 text-lg leading-tight font-medium text-rose-900 hover:underline">Site is loading</a>
+          <p class="mt-2 text-slate-500">Due to high demand we are checking your browser before accessing the site.</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
