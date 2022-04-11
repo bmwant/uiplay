@@ -82,102 +82,102 @@ export default function Converter() {
     </aside>
 
     <div className="space-y-6 sm:px-6 lg:px-0 col-span-6">
-      <form action="#" method="POST">
-        <div className="shadow sm:rounded-md sm:overflow-hidden">
-          <div className="bg-white py-6 px-4 space-y-6 sm:p-6">
-            <div>
-              <h3 className="text-lg leading-6 font-medium text-gray-900">Profit calculator</h3>
-              <p className="mt-1 text-sm text-gray-500">Enter current amount and rates to calculate projected profit.</p>
-            </div>
+      <div className="shadow sm:rounded-md sm:overflow-hidden">
+        <div className="bg-white py-6 px-4 space-y-6 sm:p-6">
+          <div>
+            <h3 className="text-lg leading-6 font-medium text-gray-900">Profit calculator</h3>
+            <p className="mt-1 text-sm text-gray-500">Enter current amount and rates to calculate projected profit.</p>
+          </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="col-span-2">
-                <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">Enter initial amount</label>
-                <div className="mt-1 rounded-md shadow-sm flex">
-                  <span className="bg-gray-50 border border-r-0 border-gray-300 rounded-l-md px-3 inline-flex items-center text-gray-500 sm:text-sm">USDT</span>
-                  <input type="number" value={amount} onChange={(e) => {setAmount(e.target.value)}} min="100" step="10" className="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"/>
-                </div>
+          <div className="grid grid-cols-3 gap-6">
+            <div className="col-span-1">
+              <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">Enter initial amount</label>
+              <div className="mt-1 rounded-md shadow-sm flex">
+                <span className="bg-gray-50 border border-r-0 border-gray-300 rounded-l-md px-3 inline-flex items-center text-gray-500 sm:text-sm">USDT</span>
+                <input type="number" value={amount} onChange={(e) => {setAmount(e.target.value)}} min="100" step="10" className="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"/>
               </div>
-
-              <div className="col-span-2">
-                <label className="block text-sm font-medium text-gray-700">Binance USDT/UAH rate</label>
-                <div className="mt-1 flex items-center">
-                  <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-8 w-8">
-                    <img src="./src/img/usdt.png" />
-                  </span>
-                  /
-                  <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-7 w-7 ml-1">
-                    <img src="./src/img/uah.png" />
-                  </span>
-                  <div className="mt-1 rounded-md shadow-sm flex pl-2">
-                    <input type="number" value={uahRate} onChange={(e) => {setUahRate(e.target.value)}} className="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-md sm:text-sm border-gray-300" />
-                  </div>
-                </div>
-                <p className="mt-2 text-sm text-gray-500">Binance P2P rate to sell ₮ for ₴</p>
-              </div>
-
-              <div className="col-span-2">
-                <label className="block text-sm font-medium text-gray-700">Monobank EUR/UAH rate</label>
-                <div className="mt-1 flex items-center">
-                  <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-7 w-7 mr-1">
-                    <img src="./src/img/eur.png"/>
-                  </span>
-                  /
-                  <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-7 w-7 ml-1">
-                    <img src="./src/img/uah.png" />
-                  </span>
-                  <div className="mt-1 rounded-md shadow-sm flex pl-2">
-                    <input type="number" value={eurRate} onChange={(e) => {setEurRate(e.target.value)}} className="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-md sm:text-sm border-gray-300"/>
-                  </div>
-                </div>
-                <p className="mt-2 text-sm text-gray-500">Monobank rate to buy € for ₴</p>
-              </div>
-
-              <div className="col-span-2">
-                <label className="block text-sm font-medium text-gray-700">Binance EUR/USDT rate</label>
-                <div className="mt-1 flex items-center">
-                  <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-7 w-7 mr-1">
-                    <img  src="./src/img/eur.png" />
-                  </span>
-                  /
-                  <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-8 w-8">
-                    <img  src="./src/img/usdt.png" />
-                  </span>
-                  <div className="mt-1 rounded-md shadow-sm flex pl-2">
-                    <input type="number" value={usdtRate} onChange={(e) => {setUsdtRate(e.target.value)}} className="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-md sm:text-sm border-gray-300" />
-                  </div>
-                </div>
-                <p className="mt-2 text-sm text-gray-500">Binance P2P rate to buy ₮ for €</p>
-              </div>
-
             </div>
           </div>
-          <div className="relative bg-gray-100 p-4 shadow rounded-lg overflow-hidden">
-            <dt>
-              <div className="absolute bg-indigo-500 rounded-md p-3">
-                <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
-                </svg>
+
+          <div className="grid grid-cols-1 gap-6">
+            <div className="col-span-1">
+              <label className="block text-sm font-medium text-gray-700">Binance USDT/UAH rate</label>
+              <div className="mt-1 flex items-center">
+                <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-8 w-8">
+                  <img src="./src/img/usdt.png" />
+                </span>
+                /
+                <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-7 w-7 ml-1">
+                  <img src="./src/img/uah.png" />
+                </span>
+                <div className="mt-1 rounded-md shadow-sm flex pl-2">
+                  <input type="number" value={uahRate} onChange={(e) => {setUahRate(e.target.value)}} className="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-md sm:text-sm border-gray-300" />
+                </div>
               </div>
-              <p className="ml-16 text-sm font-medium text-gray-500 truncate">Final profit</p>
-            </dt>
-            <dd className="ml-16 pb-6 flex items-baseline sm:pb-7">
-              <p className="text-2xl font-semibold text-gray-900">₴ {profit}</p>
-              <p className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
-                +{profitPct}%
-              </p>
-            </dd>
-          </div>
-          <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" className="bg-gray-500 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Calculate
-            </button>
-            <button type="submit" className="bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Save transaction
-            </button>
+              <p className="mt-2 text-sm text-gray-500">Binance P2P rate to sell ₮ for ₴</p>
+            </div>
+
+            <div className="col-span-1">
+              <label className="block text-sm font-medium text-gray-700">Monobank EUR/UAH rate</label>
+              <div className="mt-1 flex items-center">
+                <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-7 w-7 mr-1">
+                  <img src="./src/img/eur.png"/>
+                </span>
+                /
+                <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-7 w-7 ml-1">
+                  <img src="./src/img/uah.png" />
+                </span>
+                <div className="mt-1 rounded-md shadow-sm flex pl-2">
+                  <input type="number" value={eurRate} onChange={(e) => {setEurRate(e.target.value)}} className="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-md sm:text-sm border-gray-300"/>
+                </div>
+              </div>
+              <p className="mt-2 text-sm text-gray-500">Monobank rate to buy € for ₴</p>
+            </div>
+
+            <div className="col-span-1">
+              <label className="block text-sm font-medium text-gray-700">Binance EUR/USDT rate</label>
+              <div className="mt-1 flex items-center">
+                <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-7 w-7 mr-1">
+                  <img  src="./src/img/eur.png" />
+                </span>
+                /
+                <span className="inline-block bg-gray-100 rounded-full overflow-hidden h-8 w-8">
+                  <img  src="./src/img/usdt.png" />
+                </span>
+                <div className="mt-1 rounded-md shadow-sm flex pl-2">
+                  <input type="number" value={usdtRate} onChange={(e) => {setUsdtRate(e.target.value)}} className="focus:ring-indigo-500 focus:border-indigo-500 flex-grow block w-full min-w-0 rounded-md sm:text-sm border-gray-300" />
+                </div>
+              </div>
+              <p className="mt-2 text-sm text-gray-500">Binance P2P rate to buy ₮ for €</p>
+            </div>
+
           </div>
         </div>
-      </form>
+        <div className="relative bg-gray-100 p-6 m-4 shadow rounded-lg overflow-hidden">
+          <dt>
+            <div className="absolute bg-indigo-500 rounded-md p-3">
+              <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
+              </svg>
+            </div>
+            <p className="ml-16 text-sm font-medium text-gray-500 truncate">Final profit</p>
+          </dt>
+          <dd className="ml-16 flex items-baseline">
+            <p className="text-2xl font-semibold text-gray-900">₴ {profit}</p>
+            <p className="ml-2 flex items-baseline text-sm font-semibold text-green-600">
+              +{profitPct}%
+            </p>
+          </dd>
+        </div>
+        <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+          <button type="submit" className="bg-gray-500 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Calculate
+          </button>
+          <button type="submit" className="bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Save transaction
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   );
