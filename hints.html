@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-50">
+<html lang="en" class="h-full bg-white">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./src/favicon.svg" />
@@ -10,7 +10,7 @@
   </head>
   <body class="h-full">
     <!-- Header -->
-    <div class="relative bg-gray-50">
+    <div class="relative bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center border-b-2 border-gray-400 py-6 md:justify-start md:space-x-10">
           <div class="flex justify-start lg:w-0 lg:flex-1">
@@ -116,8 +116,10 @@
           <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             <!-- Replace with your content -->
             <div class="py-4 flex">
-              <div class="flex-none border-2 border-gray-100 w-56 mx-4 bg-white hover:bg-gray-100 p-6">
-                <div class="eyebrow"></div>
+              <div class="flex-none border border-gray-200 w-56 mx-4 bg-white hover:bg-gray-100 hover:border-gray-100 p-6 cursor-pointer relative">
+                <div class="eyebrow m-0">
+                  <label class="text-gray-600 text-xs uppercase">6 views</label>
+                </div>
                 <div class="inner-block">
                   <h2 class="mb-[8px] text-base font-bold">
                     This is a snippet
@@ -129,7 +131,15 @@
                     This is language icons
                   </div>
                 </div>
+                <span class="absolute -top-0.5 right-3">
+                  <button type="button" class="" aria-pressed="false" aria-label="Add bookmark for: Modules Overview" title="Add bookmark for: Modules Overview">
+                    <span class="fill-gray-200">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g id="bg"><path d="M19.2,2H4.8a.7.7,0,0,0-.8.8V21.1a1.3,1.3,0,0,0,.4.9h1l6.5-2.6h.2L18.6,22a1.2,1.2,0,0,0,1,0,1.3,1.3,0,0,0,.4-.9V2.8A.7.7,0,0,0,19.2,2Z"></path></g><g id="vert"><path d="M11.8,14.5a.7.7,0,0,1-.8-.7v-6a.7.7,0,0,1,.8-.8.7.7,0,0,1,.7.8v6A.7.7,0,0,1,11.8,14.5Z"></path></g><g id="horz"><path d="M14.8,11.5h-6a.7.7,0,0,1-.8-.7.7.7,0,0,1,.8-.8h6a.7.7,0,0,1,.7.8A.7.7,0,0,1,14.8,11.5Z"></path></g></svg>
+                    </span>
+                  </button>
+                </span>
               </div>
+
               <div class="flex-none border-2 border-gray-200 h-36 w-56">
                 This is a snippet
               </div>
